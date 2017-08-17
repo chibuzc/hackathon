@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            Driver's License Registration Portal
+        </title>
+        <link rel='stylesheet' type='text/css' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css'>
+        <link rel='stylesheet' type='text/css' href='/stylesheets/main.css'>
+    </head>
+    <body>
+        
+        <div class= "ui fixed inverted menu">
+            <div class="ui container">
+                <div class="header item"><i class="code icon"></i></div>
+                <a href="/" class="item">HOME</a>
+                
+                <%if (user !== "review"){%>
+                  <a href="/review/list" class="item">REVIEWER</a>
+                <%}%>
+
+                <%if (user !== "process"){%>
+                  <a href="/process/list" class="item">PROCESSOR</a>
+                <%}%>
+                
+            </div>
+        </div>
+        <%if (error && error.length>0){%>
+        <div class="ui negative message">
+  <i class="close icon"></i>
+  <div class="header">
+    <%=error%>
+  </div>
+  </div>
+      <%}%>
+  <% if (success && success.length>0){%>
+        <div class="ui negative message">
+  <i class="close icon"></i>
+  <div class="header">
+    <%=success%>
+  </div>
+     </div>
+     <%}%>

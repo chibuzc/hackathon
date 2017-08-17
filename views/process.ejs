@@ -1,0 +1,84 @@
+<%include ./partials/header %>
+             <div class="column">
+    <div class="ui raised segment">
+
+      <p></p>
+      <a class="ui blue ribbon label">PROCESS</a> <h2>Applicants Details</h2>
+      <p></p>
+       <div class = "description">
+                
+                    APPLICATION DATE: <span><%= Applicants.created.toDateString() %></span>
+                
+            </div>
+            <div class="description">
+                <p>FIRSTNAME: <span><%=Applicants.firstname%></span></p>
+            </div>
+            <div class="description">
+                <p>LASTNAME: <span><%=Applicants.lastname%></span></p>
+            </div>
+            <div class="description">
+                <p>DATE OF BIRTH: <span><%=Applicants.dateOfBirth%></span></p>
+            </div>
+            <div class="description">
+                <p>SEX: <span><%=Applicants.sex%></span></p>
+            </div>
+            <div class="description">
+                <p>STATE OF ORIGIN: <span><%=Applicants.stateOfOrigin%></span></p>
+            </div>
+            <div class="description">
+                <p>OCCUPATION: <span><%=Applicants.occupation%></span></p>
+            </div>
+            <div class="description">
+                <p>ADDRESS: <span><%=Applicants.address%></span></p>
+            </div>
+            <div class="description">
+                <p>EMAIL: <span><%=Applicants.email%></span></p>
+            </div>
+            <div class="description">
+                <p>DOC1: <span><%=Applicants.doc1%></span></p>
+            </div>
+            <div class="description">
+                <p>DOC2: <span><%=Applicants.doc2%></span></p>
+            </div>
+            <div class="description">
+                <p> APPLICATION TYPE: <span><%=Applicants. applicationType%></span></p>
+            </div>
+            <div class="description">
+                <p>TEST SCORE: <span><%=Applicants.testScore%></span></p>
+            </div>
+            <div class="description">
+                <p>STATE ISSUED: <span><%=Applicants.stateIssued%></span></p>
+            </div>
+            <div class="description">
+                <p>RENEWALS: <span><%=Applicants.renewals%></span></p>
+            </div>
+            <div class="description">
+                <p>REVIEW: <span><%=Applicants.Review[0].stat%></span></p>
+            </div>
+
+    </div>
+  </div>
+    
+<div class="ui main text container segment">
+    <div class="ui huge header">PROCESS</div>    
+<%if(Applicants.Process.length<1){%>
+    <form class="ui form" action="/process/<%=Applicants._id%>/done" method="POST">
+         <div class="field">
+            <label>Comment: </label>
+            <input type="text" name="Process[comments]" placeholder="comment" required>
+        </div>
+        
+         <div class="field">
+            <label>STATUS: </label>
+            <select name="Process[finalStat]">
+                <option value="Rejected">Rejected</option>
+                <option value="Approved">Approved</option>
+
+        </div>
+
+        <input class="ui blue button" type="submit">
+    </form>
+    <%}%>
+    
+</div>
+<%include ./partials/footer %>

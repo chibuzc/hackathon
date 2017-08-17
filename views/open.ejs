@@ -1,0 +1,24 @@
+<%include ./partials/header %>
+<h1 class="display">OPEN APPLICATIONS</h1>
+<% if(open.length<1){%>
+    <p>NO PENDING APPLICATIONS</p>
+    <% }else{%>
+        <% open.forEach(function(app){%>
+            <div class="ui middle aligned animated list">
+              <div class="item">
+                <a class="ui tiny image" href="/review/<%=app._id%>">
+                  <img src="<%= app.image %>">
+                </a>
+                <div class="content">
+                  <a class="header" href="/review/<%=app._id%>"><%= app.firstname.toUpperCase() %> <%= app.lastname.toUpperCase() %></a>
+                  
+                  <div class="description">
+                    <p>Date of Application:  <%= app.created.toDateString() %> </p>
+                  </div>
+                  
+                </div>
+             </div>
+             <hr>
+        <% }) %>
+         <% }%>
+<%include ./partials/footer %>

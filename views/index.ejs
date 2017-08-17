@@ -1,0 +1,18 @@
+<%include ./partials/header %>
+<h1>POSTS</h1>
+<% Applicants.forEach(function(Applicants){%>
+    <div>
+        <%= Applicants.name %>
+        <p>
+            <img src=<%= Applicants.image %> >
+        </p>
+        <span>
+            <%= Applicants.created %>
+        </span>
+        
+        
+        
+        <a href="/Applicants/<%=Applicants._id%>">Details</a>
+    </div>
+<% }) %>
+<%include ./partials/footer %>

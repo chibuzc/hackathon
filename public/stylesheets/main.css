@@ -1,0 +1,66 @@
+.container.main {
+    margin-top: 7em;
+}
+.column{
+    margin: 4em;
+    margin-left: 20%;
+    width: 60%;
+}
+
+.description{
+    font-size: 18px;
+    font-weight: bold;
+    color: steelblue
+    
+}
+
+.description span{
+    margin-left: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+.ui.header{
+    margin: 80px;
+    text-align: center;
+    color: steelblue;
+    font-size: 3rem
+}
+
+h1.ui.header{
+    font-size: 3rem;
+}
+
+.ui.segment:last-child {
+    margin-bottom: 10px;
+}
+
+.ui.label, .ui.labels .label {
+    font-size: 1.2rem;
+}
+
+h2{
+    text-align: center;
+}
+
+.ui.negative.message {
+    background-color: #FFF6F6;
+    color: #9F3A38;
+    margin-top: 80px;
+}
+
+.ui.list {
+    width: 70%;
+    margin-left: 18%;
+    margin-top: 50px;
+}
+
+.display{
+    text-align: center;
+    font-size: 36px;
+    margin:100px;
+}
+
+p.link{
+    margin-top: 100px
+}

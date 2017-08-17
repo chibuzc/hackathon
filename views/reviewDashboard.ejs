@@ -1,0 +1,72 @@
+<%include ./partials/header %>
+<h1 class="ui blue header">REVIEW DASHBOARD</h1>
+<div class="ui main text container segment">
+    
+    <!--<div class = "ui top attached">-->
+        <div class="ui items">
+          <div class="item">
+            <div class="content">
+              <a class="header" href="/review/success/all/view">TOTAL REGISTRANTS: </a>
+              <div class="description">
+                <div class="ui statistic">
+                  <div class="value">
+                    <%=Applicant.length%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+         <hr>
+ 
+         <div class="ui items">
+          <div class="item">
+            <div class="content">
+              <a class="header" href="/review/success/open/view">OPEN APPLICATIONS: </a>
+              <div class="description">
+                <div class="ui statistic">
+                  <div class="value">
+                    <%=open.length%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+         <hr>
+         
+          <div class="ui items">
+          <div class="item">
+            <div class="content">
+              <a class="header" href="/review/success/approved/view">TOTAL APPROVED APPLICATIONS: </a>
+              <div class="description">
+                <div class="ui statistic">
+                  <div class="value">
+                    <%=approved.length%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+         <hr>
+         
+          <div class="ui items">
+          <div class="item">
+            <div class="content">
+              <a class="header" href="/review/success/rejected/view">TOTAL REJECTED APPLICATIONS: </a>
+              <div class="description">
+                <div class="ui statistic">
+                  <div class="value">
+                    <%=rejected.length%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+         <hr>
+    <!--</div>-->
+</div>
+
+<%include ./partials/footer %>

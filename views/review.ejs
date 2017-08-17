@@ -1,0 +1,96 @@
+<%include ./partials/header %>
+<!--<div class="ui main text container segment">-->
+<!--    <div class = "ui huge header">REVIEW</div>-->
+<!--    <div class = "ui top attached">-->
+<!--        <div class="item">-->
+            
+             <div class="column">
+    <div class="ui raised segment">
+      <!--<a class="ui red ribbon label">Overview</a>-->
+      <!--<span>Account Details</span>-->
+      <p></p>
+      <a class="ui blue ribbon label">Review</a> Applicants Details
+      <p></p>
+       <div class = "description">
+                
+                    APPLICATION DATE: <span><%= Applicants.created.toDateString() %></span>
+                
+            </div>
+            <div class="description">
+                <p>FIRSTNAME: <span><%=Applicants.firstname%></span></p>
+            </div>
+            <div class="description">
+                <p>LASTNAME: <span><%=Applicants.lastname%></span></p>
+            </div>
+            <div class="description">
+                <p>DATE OF BIRTH: <span><%=Applicants.dateOfBirth%></span></p>
+            </div>
+            <div class="description">
+                <p>SEX: <span><%=Applicants.sex%></span></p>
+            </div>
+            <div class="description">
+                <p>STATE OF ORIGIN: <span><%=Applicants.stateOfOrigin%></span></p>
+            </div>
+            <div class="description">
+                <p>OCCUPATION: <span><%=Applicants.occupation%></span></p>
+            </div>
+            <div class="description">
+                <p>ADDRESS: <span><%=Applicants.address%></span><span><a class = "ui blue button" href="/review/<%=Applicants._id%>/location">View Location on Map</a></span></p> 
+            </div>
+            <div class="description">
+                <p>EMAIL: <span><%=Applicants.email%></span></p>
+            </div>
+            <div class="description">
+                <p>DOC1: <span><%=Applicants.doc1%></span></p>
+            </div>
+            <div class="description">
+                <p>DOC2: <span><%=Applicants.doc2%></span></p>
+            </div>
+            <div class="description">
+                <p> APPLICATION TYPE: <span><%=Applicants. applicationType%></span></p>
+            </div>
+            <div class="description">
+                <p>TEST SCORE: <span><%=Applicants.testScore%></span></p>
+            </div>
+            <div class="description">
+                <p>STATE ISSUED: <span><%=Applicants.stateIssued%></span></p>
+            </div>
+            <div class="description">
+                <p>RENEWALS: <span><%=Applicants.renewals%></span></p>
+            </div>
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+    </div>
+  </div>
+           
+           
+
+<div>
+    
+</div>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">REVIEW</div>
+
+<%if(Applicants.Review.length<1){%>
+    <form class="ui form" action="/review/<%=Applicants._id%>/done" method="POST">
+        <div class="field">
+            <label>COMMENT: </label>
+            <input type="text" name="Review[notes]">
+        </div>
+        <div class="field">
+            <label>STATUS: </label>
+            <select name="Review[stat]">
+                <option value="Rejected">Rejected</option>
+                <option value="Approved">Approved</option>
+
+        </div>
+         <input class="ui blue button" type="SUBMIT">
+       
+     </form>
+<%}%>
+    
+ </div>
+
+<%include ./partials/footer %>

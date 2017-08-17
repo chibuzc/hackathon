@@ -1,0 +1,14 @@
+<%include ./partials/header %>
+<h1 class = "display">NOT SUCCESFULL</h1>
+<h2>Please adhere to the following Instructions and try again</h2>
+<%errors.forEach(function(err){%>
+	<ul class="ui middle aligned animated list">
+		<div class="item">
+			<li><%=err.param%> <%=err.msg%></li>
+		</div>
+	</ul>
+<%})%>  
+  
+<%include ./partials/footer %>
+
+

@@ -1,0 +1,23 @@
+<%include ./partials/header %>
+<h1 class="display">REJECTED APPLICATIONS</h1>
+<% if(rejected.length<1){%>
+    <p>NO REJECTED APPLICATION</p>
+    <% }else{%>
+        <% rejected.forEach(function(app){%>
+            </div>
+            <div class="ui middle aligned animated list">
+              <div class="item">
+                <a class="ui tiny image" href="/review/<%=app._id%>">
+                  <img src="<%= app.image %>">
+                </a>
+                <div class="content">
+                  <a class="header" href="/review/<%=app._id%>"><%= app.firstname.toUpperCase() %> <%= app.lastname.toUpperCase() %></a>
+                  <div class="description">
+                    <p>Date of Application:  <%= app.created.toDateString() %> </p>
+                  </div>
+                </div>
+             </div>
+             <hr>
+        <% }) %>
+         <% }%>
+<%include ./partials/footer %>

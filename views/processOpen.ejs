@@ -1,0 +1,22 @@
+<%include ./partials/header %>
+<h1 class="display">UNPROCESSED APPLICATIONS</h1>
+<% if(process.length<1){%>
+    <p>NO UNPROCESSED APPLICATIONS</p>
+    <% }else{%>
+        <% process.forEach(function(app){%>
+            <div class="ui middle aligned animated list">
+              <div class="item">
+                <a class="ui tiny image" href="">
+                  <img src="<%= app.image %>">
+                </a>
+                <div class="content">
+                  <a class="header" href="/process/<%=app._id%>"><%= app.firstname.toUpperCase() %> <%= app.lastname.toUpperCase() %></a>
+                  <div class="description">
+                    <p>Date of Application:  <%= app.created.toDateString() %> </p>
+                  </div>
+                </div>
+             </div>
+             <hr>
+        <% }) %>
+         <% }%>
+<%include ./partials/footer %>
